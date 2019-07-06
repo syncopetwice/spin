@@ -1,0 +1,73 @@
+.headline {
+  background-color: #1400db;
+  padding-top: 172px;
+  // padding-bottom: 214px;
+  // background-image: url('/assets/healine.svg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+}
+
+.headline__container {
+  max-width: 1500 / 1900 * 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.headline__container-counter {
+  margin-right: 15px;
+  flex-grow: 1;
+  width: 50%;
+}
+
+.headline__container-counter-heading {
+  margin-bottom: 45px;
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-top: 0;
+  padding-left: 72px;
+  color: #FFF;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.headline__counter-element-container {
+  margin-bottom: 35px;
+}
+
+.headline__container-counter-description {
+  padding-left: 4px;
+  padding-right: 10px;
+  margin-bottom: 43px;
+  margin-top: 0;
+  font-size: 24px;
+  color: #FFF;
+  line-height: 1.5;
+}
+
+.headline__spin-it-up-action {
+  background-color: #ff496f;
+  border-radius: 2px;
+  margin-left: 155px;
+  text-transform: uppercase;
+  color: #FFF;
+  font-size: 24px;
+  text-align: center;
+  padding: 22px 80px;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+.headline__container-wheel {
+  margin-left: 15px;
+  flex-grow: 1;
+  width: 50%;
+  padding-top: 15px;
+}
+
+app-wheel {
+  transform: translate3d(30px, 10px, 0);
+}

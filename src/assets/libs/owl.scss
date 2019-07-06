@@ -1,0 +1,54 @@
+.owl-carousel.owl-theme {
+
+  .owl-nav {
+    margin-top: 0;
+
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 5px 20px 30px 10px rgba(#1f6ee3, 0.15);
+      padding: 0;
+      margin: 0;
+      top: calc(50% - 22px);
+      display: block;
+      text-align: left;
+      user-select: auto;
+    }
+
+    .owl-prev {
+      left: -105px;
+    }
+
+    .owl-next {
+      right: -105px;
+    }
+
+    .owl-carousel-arrow {
+      background-repeat: no-repeat;
+      background-size: 20px auto;
+      cursor: pointer;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      height: 100%;
+      background-color: transparent;
+      display: block;
+      text-align: left;
+    }
+
+    .owl-carousel-arrow--left {
+      background-image: url('./assets/left-arrow.svg');
+    }
+
+    .owl-carousel-arrow--right {
+      background-image: url('./assets/right-arrow.svg');
+    }
+
+  }
+
+}

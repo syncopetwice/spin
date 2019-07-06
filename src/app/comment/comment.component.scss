@@ -1,0 +1,73 @@
+:host {
+  display: block;
+}
+
+.comment {
+  position: relative;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 85px;
+  padding-bottom: 45px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 70px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 45px; // Owl Carousel Overflow Compensation
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 10px 10px 20px rgba(#cfd8dc, 0.15);
+}
+
+.comment__header {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  position: absolute;
+  padding-top: 10px;
+  padding-right: 20px;
+  top: -45px;
+}
+
+.comment__user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 5px rgba(#cfd8dc, 0.15);
+}
+
+.comment__user-avatar-image {
+  border-radius: 50%;
+  object-fit: scale-down;
+  max-width: 100%;
+  height: auto;
+}
+
+.comment__user-info {
+  margin-left: 30px;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.comment__user-name {
+  color: #1400db;
+  font-weight: 700;
+}
+
+.comment__user-divider {
+  color: #2fc9ef;
+}
+
+.comment__user-state {
+  color: #263238;
+}
+
+
+.comment__content-text {
+  font-size: 18px;
+  color: #546e7a;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+}

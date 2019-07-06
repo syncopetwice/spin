@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.wheel-container {
+  position: relative;
+}
+
+.wheel__start-action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(calc(-50% - 7.5px), -50%, 0);
+  border: none;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: transparent;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  display: block;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.wheel {
+  width: 720px;
+  height: 720px;
+  background-image: url('/assets/wheel.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  will-change: transform;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
+  transform-origin: center;
+}
