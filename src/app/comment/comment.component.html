@@ -7,12 +7,14 @@
           />
       </div>
       <div class="comment__user-info">
-        <span class="comment__user-name">Nikolas Popandopulos</span>
+        <span class="comment__user-name">{{ comment.name }}</span>
         <span class="comment__user-divider">, </span>
-        <span class="comment__user-state">NY</span>
+        <span class="comment__user-state">{{ comment.state || 'NY' }}</span>
       </div>
     </header>
     <section class="comment__content">
-      <p class="comment__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos delectus repellendus neque earum excepturi iure magni pariatur aliquam modi, odit consequatur nisi quia, tempora quo. Eveniet sunt nostrum beatae ducimus ex quas voluptas aliquid, temporibus quaerat ut nobis repudiandae! Vero ea odit aut atque in reiciendis aspernatur numquam sequi corporis.</p>
+      <p class="comment__content-text">
+        {{ comment.message }}
+      </p>
     </section>
 </div>

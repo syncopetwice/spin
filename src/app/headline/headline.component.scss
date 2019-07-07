@@ -1,48 +1,55 @@
 .headline {
-  background-color: #1400db;
   padding-top: 172px;
-  // padding-bottom: 214px;
-  // background-image: url('/assets/healine.svg');
-  // background-repeat: no-repeat;
-  // background-size: cover;
+  padding-bottom: 120px;
+  background-image: url('/assets/headline.svg');
+  background-repeat: no-repeat;
+  background-position-y: -50px;
+  background-size: cover;
 }
 
 .headline__container {
-  max-width: 1500 / 1900 * 100%;
+  max-width: 1650 / 1900 * 100%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: space-between;
+  justify-content: space-evenly;
   min-width: 0;
+  // border: 5px solid blue;
 }
 
 .headline__container-counter {
+  // border: 5px solid black;
   margin-right: 15px;
-  flex-grow: 1;
+  flex-shrink: 1;
+  flex-grow: 0;
   width: 50%;
+  max-width: 50%;
 }
 
 .headline__container-counter-heading {
-  margin-bottom: 45px;
+  margin-bottom: 35px;
   font-size: 48px;
   text-transform: uppercase;
   margin-top: 0;
-  padding-left: 72px;
+  // padding-left: 72px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
   color: #FFF;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
 }
 
 .headline__counter-element-container {
   margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
 }
 
 .headline__container-counter-description {
-  padding-left: 4px;
-  padding-right: 10px;
-  margin-bottom: 43px;
+  margin-bottom: 45px;
   margin-top: 0;
-  font-size: 24px;
+  font-size: 20px;
   color: #FFF;
   line-height: 1.5;
 }
@@ -50,24 +57,26 @@
 .headline__spin-it-up-action {
   background-color: #ff496f;
   border-radius: 2px;
-  margin-left: 155px;
-  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  // margin-left: 155px;
+  margin-left: auto;
+  letter-spacing: 1px;
+  margin-right: auto;
+  // text-transform: uppercase;
   color: #FFF;
-  font-size: 24px;
+  font-size: 18px;
   text-align: center;
-  padding: 22px 80px;
+  padding: 18px 60px;
   display: block;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .headline__container-wheel {
-  margin-left: 15px;
-  flex-grow: 1;
-  width: 50%;
   padding-top: 15px;
-}
-
-app-wheel {
-  transform: translate3d(30px, 10px, 0);
+  width: 50%;
+  // border: 5px solid #000;
+  max-width: 650px;
+  flex-shrink: 0;
 }

@@ -12,6 +12,8 @@ import { CommentsComponent } from './comments/comments.component';
 import { CommentComponent } from './comment/comment.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeadlineComponent } from './headline/headline.component';
+import { ModalComponent } from './modal/modal.component';
+import { WinContentComponent } from './win-content/win-content.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HeadlineComponent } from './headline/headline.component';
     CommentsComponent,
     CommentComponent,
     FooterComponent,
-    HeadlineComponent
+    HeadlineComponent,
+    ModalComponent,
+    WinContentComponent
   ],
   imports: [
     BrowserModule,

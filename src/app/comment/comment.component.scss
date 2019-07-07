@@ -1,6 +1,4 @@
-:host {
-  display: block;
-}
+:host {}
 
 .comment {
   position: relative;
@@ -52,7 +50,8 @@
 
 .comment__user-name {
   color: #1400db;
-  font-weight: 700;
+  font-weight: 900;
+  font-family: 'Nunito', sans-serif;
 }
 
 .comment__user-divider {

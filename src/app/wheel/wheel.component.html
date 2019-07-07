@@ -1,15 +1,25 @@
 
 <div class="wheel-container">
+
+  <div class="wheel-pointer"></div>
+
   <div
     class="wheel"
-    [ngStyle]="wheelStyles"
+    [@rotate]="state"
+    (@rotate.start)="handleAnimationStart($event)"
+    (@rotate.done)="handleAnimationEnd($event)"
     ></div>
+
   <button
-    (click)="rotate()"
+    (click)="handleStartAction()"
+    [disabled]="isAnimationInProgress"
     type="button"
     class="wheel__start-action"
     >
-    Start
+    {{ isAlreadyClicked ? 'Try Again' : 'Start' }}
   </button>
 </div>
 
+<app-modal [(isOpen)]="isWinModalActive">
+  <app-win-content></app-win-content>
+</app-modal>

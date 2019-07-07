@@ -1,0 +1,23 @@
+<div
+  class="modal"
+  *ngIf="isOpen"
+  >
+  <div
+    class="modal-window"
+    [@modal]="modal"
+    >
+    <header class="modal-header">
+      <button
+        class="modal-header__close-action"
+        (click)="close()"
+        ></button>
+    </header>
+    <section class="modal-content">
+      <ng-content></ng-content>
+    </section>
+  </div>
+  <div
+    class="modal-backdrop"
+    (click)="close()"
+    ></div>
+</div>

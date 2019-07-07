@@ -1,7 +1,7 @@
 <div class="comments">
   <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide *ngFor="let item of collection">
-      <app-comment></app-comment>
+    <ng-template carouselSlide *ngFor="let comment of comments">
+      <app-comment [comment]="comment"></app-comment>
     </ng-template>
   </owl-carousel-o>
 </div>
