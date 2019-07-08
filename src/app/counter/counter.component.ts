@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TimeService } from './../time.service';
+
 import FlipDown from 'src/assets/libs/flipdown/flipdown';
+
+import { external } from '../app.constants';
 
 @Component({
   selector: 'app-counter',
@@ -9,15 +13,20 @@ import FlipDown from 'src/assets/libs/flipdown/flipdown';
 })
 export class CounterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private timeService: TimeService
+  ) { }
 
   ngOnInit() {
-    this.init();
+    this.startCounter();
   }
 
-  init() {
-    const date = new Date().setDate(new Date().getDate() + 1) / 1000;
-    new FlipDown(date).start();
+  startCounter() {
+    new FlipDown(this.timeService.getCounterTime()).start().ifEnded(() => this.handleCounterEnd());
+  }
+
+  handleCounterEnd() {
+    window.location.href = external;
   }
 
 }

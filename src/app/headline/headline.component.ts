@@ -1,3 +1,4 @@
+import { TimeService } from './../time.service';
 import { WheelService } from './../wheel.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeadlineComponent implements OnInit {
 
   constructor(
-    private wheelService: WheelService
+    private wheelService: WheelService,
+    private timeService: TimeService
   ) { }
 
+  public currentDay: string = '';
+
   ngOnInit() {
+    this.currentDay = this.timeService.getTodayDayName();
   }
 
   handleSpinItUpAction() {

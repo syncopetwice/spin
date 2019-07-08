@@ -3,7 +3,16 @@
 }
 
 .counter {
-  position: relative;
-  // width: 610px;
-  // height: 130px;
+
+  ::ng-deep {
+    .flipdown {
+      display: flex;
+      justify-content: center;
+    }
+
+    .flipdown .rotor-group:nth-of-type(1) {
+      display: none;
+    }
+  }
+
 }

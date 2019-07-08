@@ -31,19 +31,23 @@ export class CommentsComponent implements OnInit {
   comments: Comment[] = [
     {
       name: `Paul Davis`,
-      message: `I just unpacked the my new Samsung Galaxy S10! This is the best prize of all!!`
+      message: `I just unpacked the my new Samsung Galaxy S10! This is the best prize of all!!`,
+      state: `IN`
     },
     {
       name: `Lillian Pagan`,
       message: `I won the ipad, but I already have it, can I change the prize to the Macbook?`,
+      state: `UT`
     },
     {
       name: `Joseph Payne`,
-      message: `Got samsung s10 - really disappointed, wanted iphone... Guess I'll have to sell it`
+      message: `Got samsung s10 - really disappointed, wanted iphone... Guess I'll have to sell it`,
+      state: `NV`
     },
     {
       name: `Shanay Shah`,
-      message: `Never believed in any kind of "GET IPHONE ABSOLUTELY FREE" giveaway ads but this one worked for me. I definetely will participate in the next giveaways too!`
+      message: `Never believed in any kind of "GET IPHONE ABSOLUTELY FREE" giveaway ads but this one worked for me. I definetely will participate in the next giveaways too!`,
+      state: `NY`
     }
   ];
 

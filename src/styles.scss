@@ -3,6 +3,10 @@
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import './assets/libs/owl.scss';
 
+html {
+  -webkit-text-size-adjust: none;
+}
+
 body {
   background-color: #fbfcfc;
   font-family: 'Maven Pro', sans-serif;
