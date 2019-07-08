@@ -1,3 +1,4 @@
+import { WheelService } from './../wheel.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadlineComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private wheelService: WheelService
+  ) { }
 
   ngOnInit() {
+  }
+
+  handleSpinItUpAction() {
+    this.wheelService.start();
   }
 
 }

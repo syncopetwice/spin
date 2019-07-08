@@ -5,21 +5,24 @@
 
   <div
     class="wheel"
-    [@rotate]="state"
-    (@rotate.start)="handleAnimationStart($event)"
-    (@rotate.done)="handleAnimationEnd($event)"
     ></div>
+    <!-- [@rotate]="state"
+    (@rotate.start)="wheelService.handleAnimationStart($event)"
+    (@rotate.done)="wheelService.handleAnimationEnd($event)" -->
 
+    <!-- [disabled]="isAnimationInProgress" -->
   <button
     (click)="handleStartAction()"
-    [disabled]="isAnimationInProgress"
     type="button"
     class="wheel__start-action"
     >
-    {{ isAlreadyClicked ? 'Try Again' : 'Start' }}
+    {{ wheelService.isAlreadyClicked ? 'Try Again' : 'Start' }}
   </button>
 </div>
 
-<app-modal [(isOpen)]="isWinModalActive">
+<app-modal
+  [isOpen]="wheelService.isWinModalActive"
+  (close)="handleModalClose()"
+  >
   <app-win-content></app-win-content>
 </app-modal>
