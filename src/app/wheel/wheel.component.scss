@@ -1,3 +1,5 @@
+@import "~sass-mq/mq";
+
 :host {
   display: block;
 }
@@ -11,17 +13,26 @@
 }
 
 .wheel-pointer {
-  height: 116px;
+  height: 0;
   width: 71px;
+  padding-bottom: 20%;
   position: absolute;
+  // background-color: #000;
   // transform: rotate(-90deg) translateY(-50%);
   top: 0;
   left: 50%;
-  transform: translateX(calc(-50% - 2px));
+  transform: translateX(calc(-50% + 1px));
   z-index: 2;
   background-image: url("../../assets/pointer.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position-x: center;
+  // background-color: #000;
+
+  @include mq($until: desktop) {
+    // width: 36px;
+  }
+
 }
 
 .wheel__start-action {

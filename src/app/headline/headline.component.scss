@@ -1,3 +1,5 @@
+@import "~sass-mq/mq";
+
 .headline {
   padding-top: 172px;
   padding-bottom: 120px;
@@ -5,26 +7,45 @@
   background-repeat: no-repeat;
   background-position-y: -50px;
   background-size: cover;
+
+  @include mq($until: wide) {
+    padding-top: 90px;
+    padding-bottom: 70px;
+  }
+
 }
 
 .headline__container {
-  width: 1500 / 1900 * 100%;
+  width: 80%;
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 0.575fr minmax(650px, 1fr);
-  grid-column-gap: 65px;
+  grid-template-columns: 1fr minmax(500px, 650px);
+  grid-gap: 65px;
   min-width: 0;
+
+  @include mq($until: wide) {
+    grid-gap: 45px;
+    width: 90%;
+  }
+
+  @include mq($until: desktop) {
+    // background-color: red;
+    width: 95%;
+    display: block;
+  }
+
+
 }
 
 .headline__container-counter {
-  // border: 5px solid black;
-  // margin-right: 35px;
-  // flex-shrink: 1;
-  // flex-grow: 0;
-  // width: 50%;
-  // max-width: 50%;
+
+  @include mq($until: desktop) {
+    margin-bottom: 30px;
+    // background-color: green;
+  }
+
 }
 
 .headline__container-counter-heading {
@@ -38,12 +59,24 @@
   color: #FFF;
   font-weight: 700;
   letter-spacing: 2px;
+
+  @include mq($until: wide) {
+    font-size: 32px;
+    margin-bottom: 15px;
+    // background-color: #000000;
+  }
+
 }
 
 .headline__counter-element-container {
   margin-bottom: 35px;
   display: flex;
   justify-content: center;
+
+  @include mq($until: wide) {
+    margin-bottom: 25px;
+  }
+
 }
 
 .headline__container-counter-description {
@@ -52,17 +85,27 @@
   font-size: 20px;
   color: #FFF;
   line-height: 1.75;
+
+  @include mq($until: wide) {
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+
+  @include mq($until: desktop) {
+    padding-left: 25px;
+    padding-right: 25px;
+    // background-color: purple;
+  }
+
 }
 
 .headline__spin-it-up-action {
   background-color: #ff496f;
   border-radius: 2px;
   font-family: 'Nunito', sans-serif;
-  // margin-left: 155px;
   margin-left: auto;
-  letter-spacing: 1px;
   margin-right: auto;
-  // text-transform: uppercase;
+  letter-spacing: 1px;
   color: #FFF;
   font-size: 18px;
   text-align: center;
@@ -71,13 +114,24 @@
   border: none;
   cursor: pointer;
   white-space: nowrap;
+
+  @include mq($until: wide) {
+    padding: 15px 45px;
+    font-size: 16px;
+  }
+
 }
 
 .headline__container-wheel {
   padding-top: 15px;
-  // border: 5px solid #000;
-  // width: 50%;
-  // max-width: 650px;
-  // min-width: 350px;
   flex-shrink: 0;
+
+  @include mq($until: desktop) {
+    width: 95%;
+    padding-top: 0;
+    // background-color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }

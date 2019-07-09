@@ -17,9 +17,18 @@ export class CommentsComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 500,
-    items: 2,
-    margin: 55,
-    autoHeight: true,
+    autoHeight: false,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      1000: {
+        margin: 55,
+        items: 2,
+        nav: true
+      }
+    },
     lazyLoad: true,
     navText: [
       '<div class="owl-carousel-arrow owl-carousel-arrow--left"></div>',
