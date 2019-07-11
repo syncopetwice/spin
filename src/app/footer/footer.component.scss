@@ -1,7 +1,18 @@
+@import "~sass-mq/mq";
+
+:host {
+  display: block;
+}
 
 .footer {
   margin-top: 135px;
   margin-bottom: 45px;
+
+  @include mq($until: desktop) {
+    margin-top: 55px;
+    margin-bottom: 35px;
+  }
+
 }
 
 .footer__copyright {
@@ -9,6 +20,11 @@
   color: #546e7a;
   font-size: 13px;
   text-align: center;
+
+  @include mq($until: desktop) {
+    margin-bottom: 20px;
+  }
+
 }
 
 .footer__links {
@@ -26,5 +42,10 @@
 
   + .footer__link {
     margin-left: 15px;
+
+    @include mq($until: desktop) {
+      margin-left: 30px;
+    }
+
   }
 }

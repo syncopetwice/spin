@@ -19,10 +19,3 @@
     {{ wheelService.isAlreadyClicked ? 'Try Again' : 'Start' }}
   </button>
 </div>
-
-<app-modal
-  [isOpen]="wheelService.isWinModalActive"
-  (close)="handleModalClose()"
-  >
-  <app-win-content></app-win-content>
-</app-modal>

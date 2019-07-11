@@ -2,4 +2,13 @@
   <app-headline></app-headline>
   <app-comments></app-comments>
   <app-footer></app-footer>
+
+
+  <app-modal
+    [isOpen]="wheelService.isWinModalActive"
+    (close)="handleModalClose()"
+    >
+      <app-win-content></app-win-content>
+    </app-modal>
+
 </div>

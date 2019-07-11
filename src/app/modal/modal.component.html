@@ -2,6 +2,10 @@
   class="modal"
   *ngIf="isOpen"
   >
+  <!-- <div
+    class="modal-backdrop"
+    (click)="handleClose()"
+    ></div> -->
   <div
     class="modal-window"
     [@modal]="modal"
@@ -16,8 +20,4 @@
       <ng-content></ng-content>
     </section>
   </div>
-  <div
-    class="modal-backdrop"
-    (click)="handleClose()"
-    ></div>
 </div>

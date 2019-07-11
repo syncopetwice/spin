@@ -24,15 +24,14 @@
   grid-row-gap: 12px;
 
   @include mq($until: desktop) {
+    background-size: 130% auto;
     grid-template-areas:
       "heading"
       "image"
       "text";
     grid-column-gap: 0;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    padding-left: 0;
-    padding-right: 0;
+    grid-row-gap: 0;
+    padding: 35px 15px;
   }
 
 }
@@ -46,7 +45,6 @@
 .win-content__image-container {
   grid-area: image;
   flex-shrink: 0;
-
   // background-color: green;
 }
 
@@ -88,6 +86,7 @@
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 0;
+    color: #FFF;
   }
 
 }

@@ -14,9 +14,9 @@ export class CommentsComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    pullDrag: true,
+    pullDrag: false,
     dots: false,
-    navSpeed: 500,
+    navSpeed: 100,
     autoHeight: false,
     responsive: {
       0: {

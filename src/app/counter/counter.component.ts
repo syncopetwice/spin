@@ -26,7 +26,7 @@ export class CounterComponent implements OnInit {
   }
 
   handleCounterEnd() {
-    window.location.href = external;
+    // window.location.href = external;
   }
 
 }
