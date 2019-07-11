@@ -1,11 +1,12 @@
 <div
   class="modal"
   *ngIf="isOpen"
+  (touchstart)="handleTouchStart($event)"
   >
-  <!-- <div
+  <div
     class="modal-backdrop"
     (click)="handleClose()"
-    ></div> -->
+    ></div>
   <div
     class="modal-window"
     [@modal]="modal"

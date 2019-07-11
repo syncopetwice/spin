@@ -29,7 +29,7 @@ export class CommentsComponent implements OnInit {
         nav: true
       }
     },
-    lazyLoad: true,
+    // lazyLoad: true,
     navText: [
       '<div class="owl-carousel-arrow owl-carousel-arrow--left"></div>',
       '<div class="owl-carousel-arrow owl-carousel-arrow--right"></div>'
