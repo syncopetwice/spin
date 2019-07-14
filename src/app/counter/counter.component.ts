@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { TimeService } from './../time.service';
 
 import FlipDown from 'src/assets/libs/flipdown/flipdown';
 
-import { external } from '../app.constants';
-
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent implements OnInit {

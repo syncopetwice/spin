@@ -19,6 +19,8 @@
 
       <button
         class="headline__spin-it-up-action"
+        *ngIf="!(!wheelService.isAnimationInProgress && wheelService.rotateState === 'win')"
+        [disabled]="wheelService.isImageLoading || wheelService.isAnimationInProgress || wheelService.rotateState === 'win'"
         (click)="handleSpinItUpAction()"
         >
         SPIN IT UP

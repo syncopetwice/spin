@@ -1,21 +1,39 @@
 
-<div class="wheel-container">
-
-  <div class="wheel-pointer"></div>
+<div
+  class="wheel-container"
+  >
 
   <div
-    class="wheel"
-    ></div>
-    <!-- [@rotate]="state"
-    (@rotate.start)="wheelService.handleAnimationStart($event)"
-    (@rotate.done)="wheelService.handleAnimationEnd($event)" -->
+    *ngIf="wheelService.isImageLoading"
+    class="lds-ripple"><div></div><div></div></div>
 
-    <!-- [disabled]="isAnimationInProgress" -->
+  <div
+    [ngStyle]="wheelService.isImageLoading && { opacity: 0 }"
+    class="wheel-pointer"
+    ></div>
+  <div
+    class="wheel"
+    [ngStyle]="wheelService.isImageLoading && { opacity: 0 }"
+    [@rotate]="wheelService.rotateState"
+    (@rotate.start)="handleAnimationStart($event)"
+    (@rotate.done)="handleAnimationEnd($event)"
+    >
+      <img
+        (load)="handleImageLoad($event)"
+        class="wheel-content-image"
+        src="assets/wheel-inner.png"
+        />
+  </div>
+
   <button
     (click)="handleStartAction()"
     type="button"
     class="wheel__start-action"
+    [disabled]="(wheelService.isImageLoading || wheelService.isAnimationInProgress || wheelService.rotateState === 'win')"
     >
-    {{ wheelService.isAlreadyClicked ? 'Try Again' : 'Start' }}
+    <div
+      *ngIf="!(wheelService.isImageLoading || wheelService.isAnimationInProgress || wheelService.rotateState === 'win')"
+      [textContent]="wheelService.actionLabel"
+      ></div>
   </button>
 </div>

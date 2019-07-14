@@ -5,8 +5,10 @@
 .counter {
 
   ::ng-deep {
+
     .flipdown {
       display: flex;
+      width: 400px;
       justify-content: center;
     }
 

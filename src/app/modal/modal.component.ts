@@ -7,10 +7,13 @@ import {
   SimpleChanges,
   OnChanges,
   OnDestroy,
-  HostListener
-} from '@angular/core';
+  HostListener,
+  ChangeDetectionStrategy,
+ } from '@angular/core';
 
-import { get } from 'lodash';
+import {
+  get
+} from 'lodash';
 
 import {
   disableBodyScroll,
@@ -18,13 +21,23 @@ import {
   clearAllBodyScrollLocks
 } from 'body-scroll-lock';
 
-import { trigger, transition, useAnimation } from '@angular/animations';
-import { zoomIn } from 'ng-animate';
+import {
+  trigger,
+  transition,
+  useAnimation
+} from '@angular/animations';
+
+import {
+  zoomIn
+} from 'ng-animate';
+
+declare var $: any;
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('modal', [
       transition(
@@ -51,7 +64,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
       this.isOpen
       && event.key === 'Escape'
       ) {
-      console.log(event);
       this.handleClose();
     }
   }
@@ -82,19 +94,21 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
   handleClose() {
     this.isOpen = false;
+    this.setIsOpenModalState({ state: this.isOpen });
     this.close.emit(null);
   }
 
   setIsOpenModalState({ state }) {
+
+    const options = {
+      reserveScrollBarGap: true
+    };
+
     if (state) {
-      const options = {
-        reserveScrollBarGap: true
-      };
       disableBodyScroll(this.body, options);
     } else {
       enableBodyScroll(this.body);
     }
   }
-
 
 }

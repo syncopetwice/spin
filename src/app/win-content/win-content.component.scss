@@ -45,16 +45,7 @@
 .win-content__image-container {
   grid-area: image;
   flex-shrink: 0;
-  // background-color: green;
-  // object-fit: scale-down;
-  display: block;
-  max-width: 100%;
-  width: 400px;
-  height: 0;
-  padding-bottom: 145%;
-  background-image: url('../../assets/iphone.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+   width: 400px;
 
   @include mq($until: desktop) {
     margin-left: auto;
@@ -64,8 +55,10 @@
 }
 
 .win-content__phone-image {
-
-
+  object-fit: scale-down;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 

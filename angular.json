@@ -50,7 +50,9 @@
               "src/assets/libs/flipdown/flipdown.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery-slim/dist/jquery.slim.js"
+            ]
           },
           "configurations": {
             "production": {

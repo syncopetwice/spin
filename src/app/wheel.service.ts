@@ -1,12 +1,25 @@
 import { Injectable } from '@angular/core';
+
 import _ from 'lodash';
 
+import { Observable, Subject } from 'rxjs';
+
+type ActionLabelType = 'Start'|'Rolling...'|'Try Again';
 @Injectable({
   providedIn: 'root'
 })
 export class WheelService {
 
   constructor() { }
+
+  private subject = new Subject<any>();
+
+
+
+  public rotateState = 'start';
+  public isImageLoading: boolean = true;
+
+  public actionLabel: ActionLabelType = 'Start';
 
   public isAlreadyClicked = false;
   public isAnimationInProgress = false;
@@ -16,20 +29,35 @@ export class WheelService {
 
   public deg = 0;
 
-  start() {
-    if (this.isWin(this.getAngle())) {
-      this.isAlreadyClicked = false;
-      this.isWinModalActive = true;
-      this.clickCounter = 0;
-    } else {
-      this.isAlreadyClicked = true;
-      this.clickCounter++;
-    }
+  highlight() {
+    this.subject.next();
   }
 
-  randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+  getHighlight(): Observable<any> {
+    return this.subject.asObservable();
+  }
 
-  getAngle = () => this.randomIntFromInterval(0, 360);
+  start() {
+
+    console.log('Start');
+
+    if (this.clickCounter === 0) {
+      this.clickCounter++;
+      this.rotateState = 'loose';
+    } else {
+      this.clickCounter = 0;
+      this.rotateState = 'win';
+    }
+
+    // if (this.isWin(this.getAngle())) {
+    //   this.isAlreadyClicked = false;
+    //   this.isWinModalActive = true;
+    //   this.clickCounter = 0;
+    // } else {
+    //   this.isAlreadyClicked = true;
+    //   this.clickCounter++;
+    // }
+  }
 
   isWin(angle) {
     if (
@@ -44,9 +72,19 @@ export class WheelService {
     }
   }
 
-  handleAnimationStart() {}
+  handleAnimationStart() {
+    this.isAnimationInProgress = true;
+  }
 
-  handleAnimationEnd() {}
+  handleAnimationEnd() {
+    this.isAnimationInProgress = false;
+    this.actionLabel = 'Try Again';
+
+    if (this.rotateState === 'win') {
+      this.isWinModalActive = true;
+    }
+
+  }
 
 
 

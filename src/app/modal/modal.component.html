@@ -1,12 +1,7 @@
 <div
   class="modal"
   *ngIf="isOpen"
-  (touchstart)="handleTouchStart($event)"
   >
-  <div
-    class="modal-backdrop"
-    (click)="handleClose()"
-    ></div>
   <div
     class="modal-window"
     [@modal]="modal"
@@ -21,4 +16,10 @@
       <ng-content></ng-content>
     </section>
   </div>
+
+  <div
+    (click)="handleClose()"
+    class="modal-backdrop"
+    ></div>
+
 </div>

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 import { Comment } from './../comment.model';
 
 @Component({
   selector: 'app-comments',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss']
 })
@@ -14,10 +15,10 @@ export class CommentsComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    pullDrag: false,
+    pullDrag: true,
     dots: false,
-    navSpeed: 100,
     autoHeight: false,
+    slideBy: 1,
     responsive: {
       0: {
         items: 1,
@@ -26,15 +27,15 @@ export class CommentsComponent implements OnInit {
       1000: {
         margin: 55,
         items: 2,
-        nav: true
+        nav: true,
+        slideBy: 2
       }
     },
     // lazyLoad: true,
     navText: [
       '<div class="owl-carousel-arrow owl-carousel-arrow--left"></div>',
       '<div class="owl-carousel-arrow owl-carousel-arrow--right"></div>'
-    ],
-    nav: true
+    ]
   };
 
   comments: Comment[] = [
