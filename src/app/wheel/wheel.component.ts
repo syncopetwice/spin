@@ -4,37 +4,64 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 
-import Rotation from './rotate';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from '@angular/animations';
 
-import { Subscription } from 'rxjs';
+const animation = '5s cubic-bezier(0.075, 0.82, 0.165, 1)';
 
 import { WheelService } from './../wheel.service';
 @Component({
   selector: 'app-wheel',
   templateUrl: './wheel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: Rotation,
+  animations: [
+    trigger('rotate',
+      [
+        state('start', style({
+          transform: 'rotate(0deg)'
+        })),
+        state('loose', style({
+          transform: 'rotate(510deg)'
+        })),
+        state('win', style({
+          transform: 'rotate(1100deg)'
+        })),
+        transition('start => loose', [
+          animate(animation)
+        ]),
+        transition('loose => win', [
+          animate(animation)
+        ])
+      ]
+    ),
+    trigger('highlight', [
+      state('init', style({
+        transform: 'translate(-50%, -50%) scale(1.1)'
+      })),
+      state('done', style({
+        transform: 'translate(-50%, -50%) scale(1)'
+      })),
+      transition('init <=> done', [
+        animate('5s cubic-bezier(0.075, 0.82, 0.165, 1)')
+      ])
+    ])
+  ],
   styleUrls: ['./wheel.component.scss']
 })
 export class WheelComponent implements OnInit {
 
-  subscription: Subscription;
-
   constructor(
     public wheelService: WheelService
-  ) {
-    this.subscription = this.wheelService.getHighlight().subscribe(() => {
-
-    });
-  }
+  ) {}
 
   public animationCounter: number = 0;
 
   ngOnInit() {}
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 
   handleImageLoad() {
     this.wheelService.isImageLoading = false;
@@ -50,6 +77,7 @@ export class WheelComponent implements OnInit {
 
   handleAnimationStart() {
     if (this.animationCounter > 1) {
+      console.log('Handle Animation Start');
       this.wheelService.handleAnimationStart();
     } else {
       this.animationCounter++;
@@ -63,5 +91,9 @@ export class WheelComponent implements OnInit {
       this.animationCounter++;
     }
   }
+
+  handleActionAnimationStart() {}
+
+  handleActionAnimationEnd() {}
 
 }

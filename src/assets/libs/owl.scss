@@ -1,5 +1,22 @@
 .owl-carousel.owl-theme {
 
+  .owl-dots {
+
+    margin-top: 30px;
+
+    .owl-dot {
+      + .owl-dot {
+        margin-left: 25px;
+      }
+      span {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        border-radius: 50%;
+      }
+    }
+  }
+
   .owl-stage {}
 
   .owl-nav {
@@ -48,7 +65,8 @@
     }
 
     .owl-carousel-arrow--right {
-      background-image: url('./assets/right-arrow.svg');
+      background-image: url('./assets/left-arrow.svg');
+      transform: rotate(180deg);
     }
 
   }

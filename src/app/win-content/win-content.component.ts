@@ -8,9 +8,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class WinContentComponent implements OnInit {
 
+
+  public isImageLoading: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleImageLoad() {
+    this.isImageLoading = false;
   }
 
 }

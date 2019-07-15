@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
-// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { WheelComponent } from './wheel/wheel.component';
@@ -15,6 +14,7 @@ import { HeadlineComponent } from './headline/headline.component';
 import { ModalComponent } from './modal/modal.component';
 import { WinContentComponent } from './win-content/win-content.component';
 
+import { LazyLoadImageModule, intersectionObserverPreset } from 'ng-lazyload-image';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,10 @@ import { WinContentComponent } from './win-content/win-content.component';
     BrowserModule,
     // AppRoutingModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    LazyLoadImageModule.forRoot({
+      preset: intersectionObserverPreset
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

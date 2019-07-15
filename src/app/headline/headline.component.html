@@ -17,10 +17,10 @@
           Supplies are limited so act fast!
       </p>
 
+      <!-- *ngIf="!(!wheelService.isAnimationInProgress && wheelService.rotateState === 'win')"
+      [disabled]="wheelService.isImageLoading || wheelService.isAnimationInProgress || wheelService.rotateState === 'win'" -->
       <button
         class="headline__spin-it-up-action"
-        *ngIf="!(!wheelService.isAnimationInProgress && wheelService.rotateState === 'win')"
-        [disabled]="wheelService.isImageLoading || wheelService.isAnimationInProgress || wheelService.rotateState === 'win'"
         (click)="handleSpinItUpAction()"
         >
         SPIN IT UP
@@ -34,5 +34,6 @@
       <app-wheel></app-wheel>
     </div>
     <!-- / Wheel Container -->
+
   </div>
 </div>

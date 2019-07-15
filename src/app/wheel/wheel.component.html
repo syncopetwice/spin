@@ -1,6 +1,7 @@
 
 <div
   class="wheel-container"
+
   >
 
   <div
@@ -15,20 +16,25 @@
     class="wheel"
     [ngStyle]="wheelService.isImageLoading && { opacity: 0 }"
     [@rotate]="wheelService.rotateState"
-    (@rotate.start)="handleAnimationStart($event)"
-    (@rotate.done)="handleAnimationEnd($event)"
+    (@rotate.start)="handleAnimationStart()"
+    (@rotate.done)="handleAnimationEnd()"
     >
       <img
-        (load)="handleImageLoad($event)"
+        loading="lazy"
+        (load)="handleImageLoad()"
         class="wheel-content-image"
         src="assets/wheel-inner.png"
         />
   </div>
 
   <button
+    [@highlight]="wheelService.highlightState"
+    (@highlight.start)="handleActionAnimationStart()"
+    (@highlight.done)="handleActionAnimationEnd()"
     (click)="handleStartAction()"
     type="button"
     class="wheel__start-action"
+    [ngStyle]="wheelService.isImageLoading && { opacity: 0 }"
     [disabled]="(wheelService.isImageLoading || wheelService.isAnimationInProgress || wheelService.rotateState === 'win')"
     >
     <div

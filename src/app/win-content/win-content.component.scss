@@ -5,52 +5,37 @@
 }
 
 .win-content {
-  background-image: linear-gradient(295deg, rgba(255,255,255,0.05) 35%, rgba(255,255,255,0.25) 100%), url('/assets/modal.svg');
+  background-image: linear-gradient(295deg, rgba(255,255,255,0.25) 35%, rgba(255,255,255,0.25) 100%), url('/assets/modal.svg');
   background-repeat: no-repeat;
   background-position: -2px -2px;
-  background-size: 45% auto;
-
-  padding: 25px 50px 50px 20px;
-
-  display: grid;
-  min-width: 0;
-  // background-color: red;
-
-  grid-template-areas:
-    "image heading"
-    "image text";
-
-  grid-column-gap: 20px;
-  grid-row-gap: 12px;
+  background-size: 350px auto;
+  padding: 50px 70px 50px 50px;
 
   @include mq($until: desktop) {
-    background-size: 130% auto;
-    grid-template-areas:
-      "heading"
-      "image"
-      "text";
-    grid-column-gap: 0;
-    grid-row-gap: 0;
     padding: 35px 15px;
   }
 
 }
-.win-content__column {
-  // width: 50%;
-  // flex-shrink: 0;
-  // padding-left: 10px;
-  // padding-right: 10px;
+
+.win-content__flex {
+  display: flex;
+
+  @include mq($until: desktop) {
+    display: block;
+  }
 }
 
+
 .win-content__image-container {
-  grid-area: image;
   flex-shrink: 0;
-   width: 400px;
+  width: 320px;
+  position: relative;
+  min-height: 120px;
 
   @include mq($until: desktop) {
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+    width: 250px;
   }
 }
 
@@ -61,10 +46,9 @@
   height: auto;
 }
 
-
-.win-content__heading-container {
-  grid-area: heading;
-  // background: blue;
+.win-content__information-container {
+  padding-top: 20px;
+  padding-left: 20px;
 }
 
 .win-content__heading {
@@ -78,19 +62,27 @@
   text-align: center;
 
   @include mq($until: desktop) {
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: #FFF;
+    display: none;
+  }
+
+}
+
+.win-content__heading--ahead {
+  display: block;
+  margin-top: 0;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  @include mq($from: desktop) {
+    display: none;
   }
 
 }
 
 .win-content__text-container {
-  grid-area: text;
-  // background: yellow;
   @include mq($until: desktop) {
-    max-width: 80%;
+    max-width: 95%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -105,6 +97,7 @@
 
   @include mq($until: desktop) {
     margin-bottom: 30px;
+    font-size: 16px;
   }
 }
 
@@ -126,4 +119,10 @@
   padding-right: 75px;
   font-size: 18px;
   line-height: 60px;
+
+  @include mq($until: desktop) {
+    font-size: 16px;
+    line-height: 52px;
+  }
+
 }

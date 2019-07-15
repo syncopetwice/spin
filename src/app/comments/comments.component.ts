@@ -13,25 +13,27 @@ export class CommentsComponent implements OnInit {
 
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    autoHeight: false,
+    dots: true,
+    autoHeight: true,
     slideBy: 1,
     responsive: {
       0: {
         items: 1,
-        nav: false
+        nav: false,
+        mouseDrag: false,
+        touchDrag: false,
+        pullDrag: false,
       },
       1000: {
         margin: 55,
         items: 2,
         nav: true,
-        slideBy: 2
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
       }
     },
-    // lazyLoad: true,
+    lazyLoad: true,
     navText: [
       '<div class="owl-carousel-arrow owl-carousel-arrow--left"></div>',
       '<div class="owl-carousel-arrow owl-carousel-arrow--right"></div>'
@@ -40,24 +42,28 @@ export class CommentsComponent implements OnInit {
 
   comments: Comment[] = [
     {
-      name: `Paul Davis`,
+      name: `Gregory Yang`,
       message: `I just unpacked the my new Samsung Galaxy S10! This is the best prize of all!!`,
-      state: `IN`
+      state: `IN`,
+      avatar: './assets/comments/8vu802u5812vu5.png'
     },
     {
       name: `Lillian Pagan`,
       message: `I won the ipad, but I already have it, can I change the prize to the Macbook?`,
-      state: `UT`
+      state: `UT`,
+      avatar: './assets/comments/v12uv4120941v24.png'
     },
     {
       name: `Joseph Payne`,
       message: `Got samsung s10 - really disappointed, wanted iphone... Guess I'll have to sell it`,
-      state: `NV`
+      state: `NV`,
+      avatar: './assets/comments/uhvru12h1yv2590712ym.png'
     },
     {
       name: `Shanay Shah`,
       message: `Never believed in any kind of "GET IPHONE ABSOLUTELY FREE" giveaway ads but this one worked for me. I definetely will participate in the next giveaways too!`,
-      state: `NY`
+      state: `NY`,
+      avatar: './assets/comments/192vu021vu4v124.png'
     }
   ];
 

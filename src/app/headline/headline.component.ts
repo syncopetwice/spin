@@ -15,8 +15,8 @@ import {
 export class HeadlineComponent implements OnInit {
 
   constructor(
-    private wheelService: WheelService,
-    private timeService: TimeService
+    public wheelService: WheelService,
+    public timeService: TimeService
   ) {}
 
   public currentDay: string = '';
@@ -25,8 +25,6 @@ export class HeadlineComponent implements OnInit {
     this.currentDay = this.timeService.getTodayDayName();
   }
 
-  handleSpinItUpAction() {
-    this.wheelService.highlight();
-  }
+  handleSpinItUpAction() {}
 
 }
