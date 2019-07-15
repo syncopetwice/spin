@@ -27,10 +27,10 @@
         />
   </div>
 
+  <!-- [@highlight]="wheelService.highlightState"
+  (@highlight.start)="handleActionAnimationStart()"
+  (@highlight.done)="handleActionAnimationEnd()" -->
   <button
-    [@highlight]="wheelService.highlightState"
-    (@highlight.start)="handleActionAnimationStart()"
-    (@highlight.done)="handleActionAnimationEnd()"
     (click)="handleStartAction()"
     type="button"
     class="wheel__start-action"
