@@ -1,3 +1,4 @@
+import { UrlService } from './../url.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { WheelService } from './../wheel.service';
 @Component({
@@ -9,12 +10,17 @@ import { WheelService } from './../wheel.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    public wheelService: WheelService
+    public wheelService: WheelService,
+    private urlService: UrlService
   ) { }
 
   ngOnInit() {
   }
 
   handleModalClose() {}
+
+  handleModalClick() {
+    this.urlService.relocate();
+  }
 
 }

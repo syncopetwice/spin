@@ -57,6 +57,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() isOpen: boolean;
   @Output() close: EventEmitter<any> = new EventEmitter();
+  @Output() modalClick: EventEmitter<any> = new EventEmitter();
 
   @HostListener('document:keyup', ['$event'])
   handleEscapeKey(event: KeyboardEvent) {
@@ -90,6 +91,10 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     clearAllBodyScrollLocks();
+  }
+
+  handleModalClick() {
+    this.modalClick.emit();
   }
 
   handleClose() {

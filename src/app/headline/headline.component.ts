@@ -25,6 +25,4 @@ export class HeadlineComponent implements OnInit {
     this.currentDay = this.timeService.getTodayDayName();
   }
 
-  handleSpinItUpAction() {}
-
 }

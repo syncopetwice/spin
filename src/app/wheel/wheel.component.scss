@@ -37,8 +37,8 @@
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  width: 120px;
-  height: 120px;
+  width: 175px;
+  height: 175px;
   background-color: #1400db;
   background-clip: padding-box;
   border: 20px solid rgba(255,255,255,0.25);
@@ -66,6 +66,27 @@
     border-width: 10px;
   }
 
+
+}
+
+@keyframes scale {
+  0%   {
+    opacity: 0.975;
+    transform: translate(-50%, -50%) scale(0.750);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.wheel__start-action--is-try-again {
+  background-color: darken(rgba(251,109,116,1), 5%);
+}
+.wheel__start-action--is-animated {
+  animation: scale 1s infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
 }
 
 .wheel {

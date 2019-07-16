@@ -5,6 +5,7 @@
   <app-modal
     [isOpen]="wheelService.isWinModalActive"
     (close)="handleModalClose()"
+    (modalClick)="handleModalClick()"
     >
       <app-win-content></app-win-content>
   </app-modal>

@@ -35,6 +35,10 @@
     type="button"
     class="wheel__start-action"
     [ngStyle]="wheelService.isImageLoading && { opacity: 0 }"
+    [ngClass]="{
+      'wheel__start-action--is-try-again': !wheelService.isAnimationInProgress && wheelService.rotateState === 'loose',
+      'wheel__start-action--is-animated': wheelService.rotateState !== 'win'
+    }"
     [disabled]="(wheelService.isImageLoading || wheelService.isAnimationInProgress || wheelService.rotateState === 'win')"
     >
     <div

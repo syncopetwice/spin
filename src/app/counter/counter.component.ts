@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { TimeService } from './../time.service';
+import { UrlService } from './../url.service';
 
 import FlipDown from 'src/assets/libs/flipdown/flipdown';
 
@@ -13,7 +14,8 @@ import FlipDown from 'src/assets/libs/flipdown/flipdown';
 export class CounterComponent implements OnInit {
 
   constructor(
-    private timeService: TimeService
+    private timeService: TimeService,
+    private urlService: UrlService
   ) { }
 
   ngOnInit() {
@@ -25,7 +27,7 @@ export class CounterComponent implements OnInit {
   }
 
   handleCounterEnd() {
-    // window.location.href = external;
+    this.urlService.relocate();
   }
 
 }
