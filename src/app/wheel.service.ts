@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import _ from 'lodash';
-
 type ActionLabelType = 'Start'|'Rolling...'|'Try Again';
 @Injectable({
   providedIn: 'root'

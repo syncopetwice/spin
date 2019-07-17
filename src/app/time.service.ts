@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import * as moment from 'moment';
+import format from 'date-fns/format';
+import addMinutes from 'date-fns/add_minutes';
+import getTime from 'date-fns/get_time';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +12,18 @@ export class TimeService {
   constructor() { }
 
   getTodayDayName() {
-    return moment().format('dddd') || 'Day';
+    return format(new Date(), 'dddd') || 'Day';
   }
 
   getCounterTime() {
-    return moment().add({
-      minutes: 10,
-      seconds: 1
-    }).unix();
+    return Number(
+      format(
+        getTime(
+          addMinutes(format(new Date().getTime()), 10)
+        ),
+        'X'
+      )
+    );
   }
 
 

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+// import { CarouselModule } from 'ngx-owl-carousel-o';
+import { OwlModule } from 'ngx-owl-carousel';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -32,7 +33,7 @@ import { LazyLoadImageModule, intersectionObserverPreset } from 'ng-lazyload-ima
     BrowserModule,
     // AppRoutingModule,
     BrowserAnimationsModule,
-    CarouselModule,
+    OwlModule,
     LazyLoadImageModule.forRoot({
       preset: intersectionObserverPreset
     })

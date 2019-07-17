@@ -36,10 +36,15 @@
       display: block;
       text-align: left;
       user-select: auto;
+      &:focus,
+      &:active {
+        outline: none;
+      }
     }
 
     .owl-prev {
       left: -105px;
+
     }
 
     .owl-next {

@@ -25,17 +25,17 @@
   }
 }
 
-
 .win-content__image-container {
   flex-shrink: 0;
   width: 320px;
+  height: 545px;
   position: relative;
-  min-height: 120px;
 
   @include mq($until: desktop) {
     margin-left: auto;
     margin-right: auto;
     width: 250px;
+    height: 414px;
   }
 }
 

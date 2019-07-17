@@ -11,9 +11,7 @@ import {
   ChangeDetectionStrategy,
  } from '@angular/core';
 
-import {
-  get
-} from 'lodash';
+import get from 'lodash/get';
 
 import {
   disableBodyScroll,

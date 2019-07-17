@@ -1,8 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 
 import { Comment } from './../comment.model';
-
 @Component({
   selector: 'app-comments',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -11,26 +9,23 @@ import { Comment } from './../comment.model';
 })
 export class CommentsComponent implements OnInit {
 
-  customOptions: OwlOptions = {
+  customOptions = {
     loop: true,
     dots: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
     autoHeight: true,
     slideBy: 1,
     responsive: {
       0: {
         items: 1,
         nav: false,
-        mouseDrag: false,
-        touchDrag: false,
-        pullDrag: false,
       },
       1000: {
         margin: 55,
         items: 2,
-        nav: true,
-        mouseDrag: true,
-        touchDrag: true,
-        pullDrag: true,
+        nav: true
       }
     },
     lazyLoad: true,
@@ -69,6 +64,8 @@ export class CommentsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
 }

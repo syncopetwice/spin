@@ -48,10 +48,13 @@
             ],
             "styles": [
               "src/assets/libs/flipdown/flipdown.css",
+              "./node_modules/owl.carousel/dist/assets/owl.carousel.css",
+              "./node_modules/owl.carousel/dist/assets/owl.theme.default.css",
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery-slim/dist/jquery.slim.js"
+              "node_modules/jquery-slim/dist/jquery.slim.js",
+              "./node_modules/owl.carousel/dist/owl.carousel.js"
             ]
           },
           "configurations": {

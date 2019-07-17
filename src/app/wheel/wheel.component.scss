@@ -37,8 +37,8 @@
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  width: 175px;
-  height: 175px;
+  width: 165px;
+  height: 165px;
   background-color: #1400db;
   background-clip: padding-box;
   border: 20px solid rgba(255,255,255,0.25);
@@ -61,9 +61,16 @@
     opacity: 0.75;
   }
 
+  @include mq($until: desktop) {
+    width: 150px;
+    height: 150px;
+  }
+
   @include mq($until: tablet) {
     font-size: 16px;
     border-width: 10px;
+    width: 125px;
+    height: 125px;
   }
 
 
@@ -71,11 +78,9 @@
 
 @keyframes scale {
   0%   {
-    opacity: 0.975;
-    transform: translate(-50%, -50%) scale(0.750);
+    transform: translate(-50%, -50%) scale(0.75);
   }
   100% {
-    opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
 }
