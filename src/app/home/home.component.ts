@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleModalClose() {}
+  // handleModalClose() {}
 
   handleModalClick() {
     this.urlService.relocate();

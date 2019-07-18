@@ -6,10 +6,12 @@ html {
   -webkit-text-size-adjust: none;
   -webkit-overflow-scrolling: touch;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background-color: #fbfcfc;
   height: 100%;
   font-family: 'Maven Pro', sans-serif;
+  overflow-x: hidden;
 }

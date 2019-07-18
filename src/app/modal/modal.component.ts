@@ -54,18 +54,18 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
   modal: any;
 
   @Input() isOpen: boolean;
-  @Output() close: EventEmitter<any> = new EventEmitter();
+  // @Output() close: EventEmitter<any> = new EventEmitter();
   @Output() modalClick: EventEmitter<any> = new EventEmitter();
 
-  @HostListener('document:keyup', ['$event'])
-  handleEscapeKey(event: KeyboardEvent) {
-    if (
-      this.isOpen
-      && event.key === 'Escape'
-      ) {
-      this.handleClose();
-    }
-  }
+  // @HostListener('document:keyup', ['$event'])
+  // handleEscapeKey(event: KeyboardEvent) {
+  //   if (
+  //     this.isOpen
+  //     && event.key === 'Escape'
+  //     ) {
+  //     this.handleClose();
+  //   }
+  // }
 
   constructor() {}
 
@@ -98,7 +98,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
   handleClose() {
     this.isOpen = false;
     this.setIsOpenModalState({ state: this.isOpen });
-    this.close.emit(null);
+    // this.close.emit(null);
   }
 
   setIsOpenModalState({ state }) {
