@@ -7,20 +7,11 @@
     class="modal-window"
     [@modal]="modal"
     >
-    <!-- <header class="modal-header">
-      <button
-        class="modal-header__close-action"
-        (click)="handleClose()"
-        ></button>
-    </header> -->
     <section class="modal-content">
       <ng-content></ng-content>
     </section>
   </div>
-
-  <!-- (click)="handleClose()" -->
   <div
     class="modal-backdrop"
     ></div>
-
 </div>

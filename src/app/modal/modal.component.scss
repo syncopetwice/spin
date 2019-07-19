@@ -12,14 +12,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
   z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
-  overscroll-behavior: contain;
 }
 
 .modal-backdrop {
@@ -42,47 +38,32 @@
   max-height: calc(100% - 35px);
   max-width: 90%;
   display: flex;
-  overflow: hidden;
   flex-direction: column;
   min-width: 0;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #fff;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  transform: translateZ(0);
+  will-change: transform;
+
+  > * {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
 }
 
-// .modal-header {
-//   display: flex;
-//   justify-content: flex-end;
-//   flex-shrink: 0;
-// }
-
-// .modal-header__close-action {
-//   width: 50px;
-//   height: 50px;
-//   background: none;
-//   border: none;
-//   outline: none;
-//   background-image: url('/assets/cancel.svg');
-//   background-repeat: no-repeat;
-//   background-size: 30px 30px;
-//   background-position: center;
-//   cursor: pointer;
-//   transition: transform 0.2s ease-in-out;
-//   &:active {
-//     opacity: 0.95;
-//     transform: scale(0.95);
-//   }
-// }
-
 .modal-content {
-  border-radius: 25px;
-  background-color: #fff;
-  overflow: hidden;
   overscroll-behavior: contain;
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 100%;
-  flex-grow: 1;
-  flex-shrink: 1;
-  will-change: transform;
-  transform: translate3d(0,0,0);
+  position: relative;
+  border-radius: 25px;
 
   &::-webkit-scrollbar {
     width: 10px;
