@@ -8,14 +8,21 @@
           />
       </div>
       <div class="comment__user-info">
-        <span class="comment__user-name">{{ comment.name }}</span>
+        <span
+          class="comment__user-name"
+          [textContent]="comment.name[localeService.locale]"
+          ></span>
         <span class="comment__user-divider">, </span>
-        <span class="comment__user-state">{{ comment.state || 'NY' }}</span>
+        <span
+          class="comment__user-state"
+          [textContent]="comment.state[localeService.locale]"
+          ></span>
       </div>
     </header>
     <section class="comment__content">
-      <p class="comment__content-text">
-        {{ comment.message }}
-      </p>
+      <p
+        class="comment__content-text"
+        [innerHtml]="comment.message[localeService.locale]"
+        ></p>
     </section>
 </div>

@@ -1,8 +1,4 @@
-
-<div
-  class="wheel-container"
-
-  >
+<div class="wheel-container">
 
   <div
     *ngIf="wheelService.isImageLoading"
@@ -27,9 +23,6 @@
         />
   </div>
 
-  <!-- [@highlight]="wheelService.highlightState"
-  (@highlight.start)="handleActionAnimationStart()"
-  (@highlight.done)="handleActionAnimationEnd()" -->
   <button
     (click)="handleStartAction()"
     type="button"

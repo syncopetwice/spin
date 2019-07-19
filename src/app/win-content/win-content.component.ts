@@ -1,9 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-
+import { LocaleService } from './../locale.service';
+import { Component, OnInit } from '@angular/core';
+import { WindowRef } from '../window.service';
+import get from 'lodash/get';
 @Component({
   selector: 'app-win-content',
   templateUrl: './win-content.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./win-content.component.scss']
 })
 export class WinContentComponent implements OnInit {
@@ -11,9 +12,15 @@ export class WinContentComponent implements OnInit {
 
   public isImageLoading: boolean = true;
 
-  constructor() { }
+  public data;
+
+  constructor(
+    private $window: WindowRef,
+    public localeService: LocaleService
+  ) { }
 
   ngOnInit() {
+    this.data = get(this.$window, 'nativeWindow.__data.modal');
   }
 
   handleImageLoad() {

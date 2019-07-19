@@ -6,9 +6,7 @@ import {
   Output,
   SimpleChanges,
   OnChanges,
-  OnDestroy,
-  HostListener,
-  ChangeDetectionStrategy,
+  OnDestroy
  } from '@angular/core';
 
 import get from 'lodash/get';
@@ -35,7 +33,6 @@ declare var $: any;
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('modal', [
       transition(

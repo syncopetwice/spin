@@ -8,12 +8,12 @@ import get from 'lodash/get';
 export class UrlService {
 
   constructor(
-    public windowRef: WindowRef
+    private $window: WindowRef
   ) {}
 
   relocate() {
-    if (get(this, 'windowRef.nativeWindow.relocateLink')) {
-      window.location.href = this.windowRef.nativeWindow.relocateLink;
+    if (get(this.$window, 'nativeWindow.__data.relocateLink')) {
+      window.location.href = this.$window.nativeWindow.__data.relocateLink;
     }
   }
 }

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 
-type ActionLabelType = 'Start'|'Rolling...'|'Try Again';
 @Injectable({
   providedIn: 'root'
 })
 export class WheelService {
 
-  constructor() { }
+  constructor(
+  ) { }
+
 
   public rotateState = 'start';
 
   public isImageLoading: boolean = true;
 
-  public actionLabel: ActionLabelType = 'Start';
+  public actionLabel = 'Start';
 
   public isAlreadyClicked = false;
   public isAnimationInProgress = false;

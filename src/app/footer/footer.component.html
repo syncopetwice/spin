@@ -1,9 +1,18 @@
 <footer class="footer">
-  <div class="footer__copyright">
-    "T&C Apply. Open to all US residents aged 18 years+."
-  </div>
+  <div
+    class="footer__copyright"
+    [textContent]="data.disclaimer[localeService.locale]"
+    ></div>
   <div class="footer__links">
-    <a href="" class="footer__link">Terms</a>
-    <a href="" class="footer__link">Conditions</a>
+    <a
+      [href]="data.terms.url"
+      class="footer__link"
+      [textContent]="data.terms.text[localeService.locale]"
+      ></a>
+    <a
+      [href]="data.conditions.url"
+      class="footer__link"
+      [textContent]="data.conditions.text[localeService.locale]"
+      ></a>
   </div>
 </footer>

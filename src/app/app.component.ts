@@ -1,3 +1,4 @@
+import { LocaleService } from './locale.service';
 import { UrlService } from './url.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,10 +14,13 @@ declare var $: any;
 export class AppComponent implements OnInit {
 
   constructor(
+    public localService: LocaleService,
     private urlService: UrlService
-  ) {}
+  ) {
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
     $(() => {
       FastClick.attach(document.body);
     });
@@ -26,4 +30,5 @@ export class AppComponent implements OnInit {
     }, 180000);
 
   }
+
 }

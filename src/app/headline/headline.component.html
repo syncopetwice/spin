@@ -2,28 +2,24 @@
   <div class="headline__container">
     <!-- Counter Container -->
     <div class="headline__container-counter">
-
-      <h1 class="headline__container-counter-heading">
-        Offer Expires In
+      <h1
+        class="headline__container-counter-heading"
+        [textContent]="data.title[localeService.locale]"
+        >
       </h1>
-
       <div class="headline__counter-element-container">
         <app-counter></app-counter>
       </div>
-
-      <p class="headline__container-counter-description">
-          Every {{ currentDay }} we are giving away a limited number of the brand new iPhone XS, Samsung S10 or other exclusive prizes to randomly chosen citizens of United States! All you need to do is to spin the wheel to see if you can win the prize and if so - register for the next round of giveaway!
-          Spin the wheel to see if you can win one of our exlusive prizes!
-          Supplies are limited so act fast!
-      </p>
+      <p
+        class="headline__container-counter-description"
+        [innerHtml]="description"
+        ></p>
     </div>
     <!-- / Counter Container -->
-
     <!-- Wheel Container -->
     <div class="headline__container-wheel">
       <app-wheel></app-wheel>
     </div>
     <!-- / Wheel Container -->
-
   </div>
 </div>

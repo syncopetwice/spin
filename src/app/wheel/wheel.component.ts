@@ -1,7 +1,6 @@
 import {
   Component,
-  OnInit,
-  ChangeDetectionStrategy
+  OnInit
 } from '@angular/core';
 
 import {
@@ -18,7 +17,6 @@ import { WheelService } from './../wheel.service';
 @Component({
   selector: 'app-wheel',
   templateUrl: './wheel.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('rotate',
       [
@@ -77,7 +75,6 @@ export class WheelComponent implements OnInit {
 
   handleAnimationStart() {
     if (this.animationCounter > 1) {
-      console.log('Handle Animation Start');
       this.wheelService.handleAnimationStart();
     } else {
       this.animationCounter++;
