@@ -17,7 +17,7 @@ $mq-breakpoints: (
 
   @include mq($until: xwide) {
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 90px;
   }
 
 
@@ -59,7 +59,6 @@ $mq-breakpoints: (
 .headline__logotype-image {
   max-width: 100%;
   display: block;
-  height: auto;
 }
 
 .headline__container {
